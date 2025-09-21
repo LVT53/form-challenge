@@ -1,0 +1,267 @@
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+section:first-of-type {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #0139af;
+    padding-bottom: 8rem;
+}
+
+section:last-of-type {
+    width: 100%;
+    background: #0139af;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section:last-of-type h2 {
+    margin-bottom: 3.5rem;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 40%;
+    padding: 5rem 8rem;
+    background: #0139af;
+    height: 75vh;
+    color: #eee;
+    gap: 2rem;
+}
+
+.title-wrapper h2,
+.title-wrapper h1{
+    text-align: left;
+    margin: 0;
+}
+
+.title-wrapper h2 {
+    font-size: 1.5rem;
+    opacity: .8;
+}
+
+.title-wrapper p {
+    opacity: .7;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
+    background: #eee;
+    border-radius: 20px 0 0 20px;
+    width: 60%;
+    height: 100%;
+    min-height: 75vh;
+    box-shadow: 6px 0 31px 0 rgba(0,0,0,0.24) inset;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+input[type="text"], input[type="number"], input[type="file"] {
+    border: solid 2px #d8d8d8;
+    outline: none;
+    border-radius: 12px;
+    padding: 0.6rem;
+    background: white;
+    color: black;
+    margin-bottom: 1.5rem;
+    transition: 0.2s ease-out;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border: solid 2px #0139af;
+}
+
+input[type="text"]::placeholder, input[type="number"]::placeholder, input[type="file"]::placeholder {
+    opacity: .45;
+}
+
+input[type="file"]::before {
+    content: "Upload an album cover image";
+    color: rgba(0, 0, 0, 0.20);
+}
+
+.file-wrapper input[type="file"] {
+    width: 40%;
+    margin: 0 .5rem 0 0;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.file-wrapper div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: .5rem;
+}
+
+.file-wrapper p {
+    margin: 0 0 .4rem 0;
+}
+
+.file-wrapper img {
+    width: 30px;
+}
+
+.silent-text {
+    color: #ccc;
+    font-size: 0.8rem;
+}
+
+input[type="submit"] {
+    border: none;
+    border-radius: 12px;
+    background: #0139af;
+    color: #eee;
+    padding: .9rem 1.5rem;
+    margin-top: 4rem;
+    transition: 0.2s ease-out;
+    width: 30%;
+    margin-left: auto;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+.success {
+    background: black;
+    color: #eee;
+    border-radius: 20px;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+form.refresh {
+    padding: 0;
+    border: none;
+    width: unset;
+}
+
+form.refresh button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 30px;
+    padding: .7rem .7rem .7rem 1.5rem;
+    border: solid 2px #0139af;
+    background: #eee;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+form.refresh button img {
+    width: 30px;
+}
+
+form.refresh button:hover {
+    border-color: #6479b6;
+}
+
+.list-items {
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    box-shadow: 5px 0 30px 0 rgba(0,0,0,0.3);
+    border-radius: 20px;
+    padding: .5rem .5rem .5rem 1.5rem;
+}
+
+.item p {
+    color: black;
+    margin: 0;
+}
+
+.item p:first-of-type {
+    font-weight: 600;
+    opacity: .5;
+    font-size: .8rem;
+    margin-bottom: .3rem;
+}
+
+.item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+}
+
+.info-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    border: solid 2px #eee;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.info-item p {
+    color: #eee;
+}
