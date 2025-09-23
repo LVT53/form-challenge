@@ -62,6 +62,7 @@
         <div class="list-items">
             <div class="info-item-wrapper">
                     <form class="search-item">
+                        <input type="hidden" name="_form" value="search">
                         <div class="search-sub-wrapper">
                             <input type="text" id="search" name="search" placeholder="Search">
                             <button class="search-icon" type="submit" formaction="#results">
@@ -70,20 +71,20 @@
                         </div>
                         <div class="search-sub-wrapper">
                             <div>
-                                <label for="pop-genre">Pop</label>
-                                <input type="checkbox" id="pop-genre" name="pop-genre">
+                                <label for="search-pop-genre">Pop</label>
+                                <input type="checkbox" id="search-pop-genre" name="search-pop-genre">
                             </div>
                             <div>
-                                <label for="rock-genre">Rock</label>
-                                <input type="checkbox" id="rock-genre" name="rock-genre">
+                                <label for="search-rock-genre">Rock</label>
+                                <input type="checkbox" id="search-rock-genre" name="search-rock-genre">
                             </div>
                             <div>
-                                <label for="indie-genre">Indie</label>
-                                <input type="checkbox" id="indie-genre" name="indie-genre">
+                                <label for="search-indie-genre">Indie</label>
+                                <input type="checkbox" id="search-indie-genre" name="search-indie-genre">
                             </div>
                             <div>
-                                <label for="jazz-genre">Jazz</label>
-                                <input type="checkbox" id="jazz-genre" name="jazz-genre">
+                                <label for="search-jazz-genre">Jazz</label>
+                                <input type="checkbox" id="search-jazz-genre" name="search-jazz-genre">
                             </div>
                         </div>
                     </form>
@@ -97,23 +98,32 @@
                 </form>
             </div>
             <?php if (empty($entries)): ?>
-                <p style="text-align: center;">No entries yet. Complete the form above and click refresh!</p>
+                <p style="text-align: center;">No matching entries. Consider completing the form above.</p>
             <?php else: ?>
                 <?php foreach ($entries as $entry): ?>
                     <div class="item">
-                        <div>
-                            <p>Album title</p>
-                            <p><?=$entry['title']?></p>
+                        <div class="info-item-list">
+                            <div>
+                                <p>Album title</p>
+                                <p><?=$entry['title']?></p>
+                            </div>
+                            <div>
+                                <p>Artist</p>
+                                <p><?=$entry['author']?></p>
+                            </div>
+                            <div>
+                                <p>Year of release</p>
+                                <p><?=$entry['date']?></p>
+                            </div>
+                            <img src="<?=$entry['cover_path']?>" alt="<?=$entry['title']?> cover image">
                         </div>
-                        <div>
-                            <p>Artist</p>
-                            <p><?=$entry['author']?></p>
+                        <div class="genres-list">
+                            <p>Genres:</p>
+                            <p><?php if($entry['pop_genre']==1){echo'Pop';}?></p>
+                            <p><?php if($entry['rock_genre']==1){echo'Rock';}?></p>
+                            <p><?php if($entry['indie_genre']==1){echo'Indie';}?></p>
+                            <p><?php if($entry['jazz_genre']==1){echo'Jazz';}?></p>
                         </div>
-                        <div>
-                            <p>Year of release</p>
-                            <p><?=$entry['date']?></p>
-                        </div>
-                        <img src="<?=$entry['cover_path']?>" alt="<?=$entry['title']?> cover image">
                     </div>
                 <?php endforeach ?>
             <?php endif; ?>
