@@ -61,13 +61,34 @@
         <h2>Database entries</h2>
         <div class="list-items">
             <div class="info-item-wrapper">
-                <div class="info-item">
-
-
-
-
-
-                </div>
+                    <form class="search-item">
+                        <div class="search-sub-wrapper">
+                            <input type="text" id="search" name="search" placeholder="Search">
+                            <button class="search-icon" type="submit" formaction="#results">
+                                <img src="views/stylesheets/images/search.svg" alt="search icon">
+                            </button>
+                        </div>
+                        <div class="search-sub-wrapper">
+                            <div>
+                                <label for="pop-genre">Pop</label>
+                                <input type="checkbox" id="pop-genre" name="pop-genre">
+                            </div>
+                            <div>
+                                <label for="rock-genre">Rock</label>
+                                <input type="checkbox" id="rock-genre" name="rock-genre">
+                            </div>
+                            <div>
+                                <label for="indie-genre">Indie</label>
+                                <input type="checkbox" id="indie-genre" name="indie-genre">
+                            </div>
+                            <div>
+                                <label for="jazz-genre">Jazz</label>
+                                <input type="checkbox" id="jazz-genre" name="jazz-genre">
+                            </div>
+                        </div>
+                    </form>
+            </div>
+            <div class="info-item-wrapper end">
                 <form class="refresh" method="GET" action="/">
                     <button type="submit" formaction="#results">
                         Refresh

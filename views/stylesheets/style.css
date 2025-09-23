@@ -112,6 +112,22 @@ input[type="text"]::placeholder, input[type="number"]::placeholder, input[type="
     opacity: .45;
 }
 
+input[type="text"]#search {
+    margin: 0;
+    padding: .9rem;
+    border-radius: 30px;
+    border: solid 2px #eee;
+    width: 100%;
+}
+
+input[type="text"]#search::placeholder {
+    font-size: 1rem;
+}
+
+input[type="text"]#search:focus {
+    border: solid 2px #af013e;
+}
+
 input[type="file"]::before {
     content: "Upload an album cover image";
     color: rgba(0, 0, 0, 0.20);
@@ -201,7 +217,7 @@ form.refresh button img {
 }
 
 form.refresh button:hover {
-    border-color: #6479b6;
+    border-color: #af013e;
 }
 
 .list-items {
@@ -251,17 +267,55 @@ form.refresh button:hover {
     gap: .5rem;
 }
 
+.info-item-wrapper.end {
+    justify-content: flex-end;
+}
+
 .info-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-radius: 30px;
-    border: solid 2px #eee;
-    padding: 0 1rem;
     width: 100%;
 }
 
 .info-item p {
     color: #eee;
+}
+
+.search-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.search-sub-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+}
+
+.search-sub-wrapper:last-of-type {
+    margin-bottom: 3rem;
+}
+
+.search-sub-wrapper img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.genre-wrapper div {
+
+}
+
+button.search-icon {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
