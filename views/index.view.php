@@ -36,17 +36,27 @@
                         <img src="views/stylesheets/images/file.svg" alt="file icon">
                     </div>
                 </div>
-                <div>
+                <div class="genres-wrapper">
                     <p>Tick the appropriate genre boxes!</p>
-                    <label for="pop-genre">Pop</label>
-                    <input type="checkbox" id="pop-genre" name="pop-genre">
-                    <label for="rock-genre">Rock</label>
-                    <input type="checkbox" id="rock-genre" name="rock-genre">
-                    <label for="indie-genre">Indie</label>
-                    <input type="checkbox" id="indie-genre" name="indie-genre">
-                    <label for="jazz-genre">Jazz</label>
-                    <input type="checkbox" id="jazz-genre" name="jazz-genre">
                     <p class="silent-text">Who needs more genres anyway?</p>
+                    <div class="search-sub-wrapper">
+                        <div class="checkbox-wrapper">
+                            <label for="pop-genre">Pop</label>
+                            <input type="checkbox" id="pop-genre" name="pop-genre">
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label for="rock-genre">Rock</label>
+                            <input type="checkbox" id="rock-genre" name="rock-genre">
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label for="indie-genre">Indie</label>
+                            <input type="checkbox" id="indie-genre" name="indie-genre">
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <label for="jazz-genre">Jazz</label>
+                            <input type="checkbox" id="jazz-genre" name="jazz-genre">
+                        </div>
+                    </div>
                 </div>
                 <input type="submit" value="Submit">
             </form>
@@ -89,7 +99,10 @@
                         </div>
                     </form>
             </div>
-            <div class="info-item-wrapper end">
+            <div class="info-item-wrapper">
+                <div>
+                    <p>Total entries: <?php echo $total_entries?></p>
+                </div>
                 <form class="refresh" method="GET" action="/">
                     <button type="submit" formaction="#results">
                         Refresh

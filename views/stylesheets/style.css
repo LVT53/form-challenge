@@ -161,6 +161,7 @@ input[type="file"]::-webkit-file-upload-button {
 .silent-text {
     color: #ccc;
     font-size: 0.8rem;
+    margin-top: 0;
 }
 
 input[type="submit"] {
@@ -266,13 +267,23 @@ form.refresh button:hover {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    background: #ccc;
+    background: #ddd;
     padding: .5rem 1rem;
     border-radius: 15px;
 }
 
 .genres-list p:first-of-type {
     margin: 0;
+}
+
+.genres-list p {
+    margin: 0;
+    font-size: .8rem;
+    opacity: .5;
+}
+
+.genres-list p:empty {
+    display: none;
 }
 
 .info-item-list {
@@ -291,10 +302,6 @@ form.refresh button:hover {
     align-items: center;
     justify-content: space-between;
     gap: .5rem;
-}
-
-.info-item-wrapper.end {
-    justify-content: flex-end;
 }
 
 .info-item {
@@ -335,8 +342,38 @@ form.refresh button:hover {
     cursor: pointer;
 }
 
-.genre-wrapper div {
+.search-sub-wrapper div,
+.checkbox-wrapper {
+    background: #fff;
+    padding: .7rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    cursor: pointer;
+    border: solid 2px #fff;
+    color: #000;
+    font-size: .8rem;
+}
 
+.form-wrapper .search-sub-wrapper {
+    margin: 0;
+}
+
+.genres-wrapper p:first-of-type {
+    margin-bottom: .3rem;
+}
+
+.genres-wrapper p:last-of-type {
+    margin-bottom: .8rem;
+}
+
+.search-sub-wrapper div label,
+.search-sub-wrapper div input {
+    margin: 0;
+    cursor: pointer;
 }
 
 button.search-icon {
