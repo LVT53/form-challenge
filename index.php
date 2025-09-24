@@ -101,7 +101,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && (isset($_GET['_form']) && $_GET['_fo
     if(!empty($whereClauses)) {
         $searchSql = $searchSql . " WHERE " . implode(" AND ", $whereClauses);
         $entries = $db->query($searchSql,$params)->fetchAll(PDO::FETCH_ASSOC);
-    } else{($entries = $db->query($searchSql)->fetchAll(PDO::FETCH_ASSOC));}
+        var_dump($entries);
+        $total_entries = $entries ? count($entries) : 0;
+        //
+        //  Change $total_entries to the number of entries that match the search criteria
+        //
+
+    } else {
+        $entries = $db->query($searchSql)->fetchAll(PDO::FETCH_ASSOC);
+        $total_entries = $entries ? count($entries) : 0;
+    }
 }
 
 require 'views/index.view.php';
